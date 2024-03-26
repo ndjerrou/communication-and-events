@@ -1,12 +1,14 @@
-const UserList = props => {
-  console.log(props);
-
-  // Exo : display on the screen infos about the user
-
+const UserList = ({ users, length }) => {
   return (
     <>
       <h1>UserList</h1>
-      <p>Users : </p>
+      <p>{length} Users : </p>
+      {users.map(({ id, name, city }) => (
+        <div key={id}>
+          <h4>{name}</h4>
+          <p>{city}</p>
+        </div>
+      ))}
     </>
   );
 };
