@@ -1,19 +1,16 @@
-const UserList = ({ users, length, isAvailable }) => {
-  console.log(isAvailable);
-  return (
-    <>
-      <h1>UserList</h1>
-      <p>
-        {length} Users - {isAvailable ? 'All available' : 'Not available'}
-      </p>
-      {users.map(({ id, name, city }) => (
-        <div key={id}>
-          <h4>{name}</h4>
-          <p>{city}</p>
-        </div>
-      ))}
-    </>
-  );
-};
+import User from './User';
+
+const UserList = ({ users, length, isAvailable }) => (
+  <>
+    <h1>UserList</h1>
+    <p>
+      {length} Users - {isAvailable ? 'All available' : 'Not available'}
+    </p>
+    {users.map(({ id, name, city }) => (
+      // reference here the User component to display individually each user
+      <User id={id} name={name} city={city} />
+    ))}
+  </>
+);
 
 export default UserList;
