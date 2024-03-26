@@ -1,4 +1,4 @@
-const User = ({ id, name, city }) => {
+const User = ({ id, name, city, isMajor }) => {
   const handleClick = () => {
     alert('event click fired');
   };
@@ -6,7 +6,7 @@ const User = ({ id, name, city }) => {
   return (
     <div key={id}>
       <h4>
-        {name}{' '}
+        {name} - {isMajor ? <span>Yes majeur</span> : <span>Oups, mineur</span>}{' '}
         <button
           onMouseOver={() => alert('survol du bouton')}
           onClick={handleClick}
